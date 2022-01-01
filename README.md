@@ -10,7 +10,7 @@
 
 <br />
 <div align="center">
-  <a href="https://github.com/Thytu/Adversarial-attacks">
+  <a href="https://github.com/Thytu/OpenAdv">
     <img src=".img/logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -19,14 +19,14 @@
   <p align="center">
     An easy to use simple adversarial attack tool
     <br />
-    <a href="https://github.com/Thytu/Adversarial-attacks"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/Thytu/OpenAdv"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/Thytu/Adversarial-attacks">View Demo</a>
+    <a href="https://github.com/Thytu/OpenAdv">View Demo</a>
     ·
-    <a href="https://github.com/Thytu/Adversarial-attacks/issues">Report Bug</a>
+    <a href="https://github.com/Thytu/OpenAdv/issues">Report Bug</a>
     ·
-    <a href="https://github.com/Thytu/Adversarial-attacks/issues">Request Feature</a>
+    <a href="https://github.com/Thytu/OpenAdv/issues">Request Feature</a>
   </p>
 </div>
 
@@ -163,7 +163,7 @@ TODO: add a conf threshold to param
 - [ ] Add Changelog
 - [ ] Custom Model Support
 
-See the [open issues](https://github.com/Thytu/Adversarial-attacks/issues) for a full list of proposed features and known issues.
+See the [open issues](https://github.com/Thytu/OpenAdv/issues) for a full list of proposed features and known issues.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -201,7 +201,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Valentin De Matos - [@ValentinDeMato1](https://twitter.com/ValentinDeMato1) - valentin.de-matos@epitech.eu
 
-Project Link: [https://github.com/Thytu/Adversarial-attacks](https://github.com/Thytu/Adversarial-attacks)
+Project Link: [https://github.com/Thytu/OpenAdv](https://github.com/Thytu/OpenAdv)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -209,7 +209,7 @@ Project Link: [https://github.com/Thytu/Adversarial-attacks](https://github.com/
 
 ## Acknowledgments
 
-* [Adversarial Attacks in Machine Learning and How to Defend Against Them](https://towardsdatascience.com/adversarial-attacks-in-machine-learning-and-how-to-defend-against-them-a2beed95f49c)
+* [Adversarial Attacks in Machine Learning and How to Defend Against Them](https://towardsdatascience.com/OpenAdv-in-machine-learning-and-how-to-defend-against-them-a2beed95f49c)
 * [Pytorch - ADVERSARIAL EXAMPLE GENERATION](https://pytorch.org/tutorials/beginner/fgsm_tutorial.html)
 * [README Template](https://github.com/othneildrew/Best-README-Template)
 
@@ -218,17 +218,17 @@ Project Link: [https://github.com/Thytu/Adversarial-attacks](https://github.com/
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[contributors-shield]: https://img.shields.io/github/contributors/Thytu/Adversarial-attacks.svg?style=for-the-badge
-[contributors-url]: https://github.com/Thytu/Adversarial-attacks/graphs/contributors
-[issues]: https://img.shields.io/github/issues/Thytu/Adversarial-attacks
-[forks-shield]: https://img.shields.io/github/forks/Thytu/Adversarial-attacks.svg?style=for-the-badge
-[forks-url]: https://github.com/Thytu/Adversarial-attacks/network/members
-[stars-shield]: https://img.shields.io/github/stars/Thytu/Adversarial-attacks.svg?style=for-the-badge
-[stars-url]: https://github.com/Thytu/Adversarial-attacks/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Thytu/Adversarial-attacks.svg?style=for-the-badge
-[issues-url]: https://github.com/Thytu/Adversarial-attacks/issues
-[license-shield]: https://img.shields.io/github/license/Thytu/Adversarial-attacks.svg?style=for-the-badge
-[license-url]: https://github.com/Thytu/Adversarial-attacks/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/Thytu/OpenAdv.svg?style=for-the-badge
+[contributors-url]: https://github.com/Thytu/OpenAdv/graphs/contributors
+[issues]: https://img.shields.io/github/issues/Thytu/OpenAdv
+[forks-shield]: https://img.shields.io/github/forks/Thytu/OpenAdv.svg?style=for-the-badge
+[forks-url]: https://github.com/Thytu/OpenAdv/network/members
+[stars-shield]: https://img.shields.io/github/stars/Thytu/OpenAdv.svg?style=for-the-badge
+[stars-url]: https://github.com/Thytu/OpenAdv/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Thytu/OpenAdv.svg?style=for-the-badge
+[issues-url]: https://github.com/Thytu/OpenAdv/issues
+[license-shield]: https://img.shields.io/github/license/Thytu/OpenAdv.svg?style=for-the-badge
+[license-url]: https://github.com/Thytu/OpenAdv/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/valentin-de-matos
 [product-screenshot]: .img/demo-simple.gif
