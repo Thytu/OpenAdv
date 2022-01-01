@@ -60,21 +60,21 @@
 
 
 
-<!-- ABOUT THE PROJECT -->
 ## About The Project
-
-[![Product Demo Simple][product-demo-simple]](https://github.com/Thytu/Adversarial-attacks)
-
-
 
 There are many great web interface to try adversarial attacks available on GitHub; however, I didn't find one that really suited my needs so I created this one.
 
-Here's why:
+Key features:
 * Simple examples to get started
 * Multiple type of Adv Attacks available
 * Usage of custom model (vision only) (in progress)
 
 If you miss any type of Adv Attack please consider to fork this repo and to create a pull request or to open an issue.
+
+<br/>
+<div align="center">
+  <img src=".img/demo-simple.gif" alt="Demo OpenAdv Simle">
+</div>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
