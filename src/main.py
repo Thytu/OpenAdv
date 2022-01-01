@@ -1,50 +1,70 @@
+import json
 import torch
-import matplotlib.pyplot as plt
-from torchvision.models import vgg19
-
 import adversarial
 import data_handler
+import gradio as gr
 
-# TODO: create a web interface to play with the parameters + describe how does the used attack works + let the user choose attack & image
 
-def play_attack(name, model, image, **kwargs):
-    print('\033[1m' + name + '\033[0m')
+def play_attack(img, attack_name, epsilon, alpha, num_iter):
+    """
+    imask, timask, fgsm, tfgsm, bim, tbim
+    """
 
-    perturbed_data = adversarial.select_attack(name)(model, image, **kwargs)
+    image = data_handler.np_array_to_tensor_image(img, device=DEVICE)
 
-    f = plt.figure()
+    model_predictions = torch.softmax(model(image), dim=1)
+    label = torch.argmax(model_predictions, dim=1)
+    labels = {CLS_IDX[str(idx)]: confidence for idx, confidence in enumerate(model_predictions.detach().cpu().tolist()[0])}
 
-    f.add_subplot(1, 2, 1)
-    plt.title("Image")
-    plt.imshow(data_handler.tensor_to_image(image))
+    perturbed_data = adversarial.select_attack(attack_name)(model, image, label=label, epsilon=epsilon, alpha=alpha, num_iter=num_iter, target=None)
 
-    f.add_subplot(1, 2, 2)
-    plt.title(f"{name} e:{kwargs['epsilon'] if 'epsilon' in kwargs else '_'} a:{kwargs['alpha'] if 'alpha' in kwargs else '_'}")
-    plt.imshow(data_handler.tensor_to_image(perturbed_data))
+    model_predictions_w_attack = torch.softmax(model(perturbed_data), dim=1).detach().cpu().tolist()[0]
+    labels_w_attack = {CLS_IDX[str(idx)]: confidence for idx, confidence in enumerate(model_predictions_w_attack)}
 
-    plt.show()
-
-    print(f"Expected: {label} and got {torch.argmax(model(image), dim=1)}")
-    print(f"Expected: {label} and got {torch.argmax(model(perturbed_data), dim=1)}")
+    return data_handler.tensor_to_image(image), labels, data_handler.tensor_to_image(perturbed_data), labels_w_attack
 
 
 if __name__ == '__main__':
 
-    ACOUSTIC_GUITAR = 402
-    WELSH_SPRINGER_SPANIEL = 218
+    CLS_IDX = json.load(open('./data/imagenet_1k_cls_idx.json'))
     DEVICE = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
-    model = vgg19(pretrained=True).eval().to(device=DEVICE)
-
+    model = torch.hub.load('pytorch/vision:v0.10.0', 'mobilenet_v2', pretrained=True)
     best_test_acc = None
 
-    image = data_handler.load_image_to_tensor("./data/images/acoustic guitar.jpeg", device=DEVICE)
-    label = torch.LongTensor([ACOUSTIC_GUITAR]).to(DEVICE)
-    target = torch.LongTensor([WELSH_SPRINGER_SPANIEL]).to(DEVICE)
+    iface = gr.Interface(fn=play_attack, inputs=[
+        gr.inputs.Image(label="Image to feed"),
+        gr.inputs.Radio(["imask", "timask", "fgsm", "tfgsm", "bim", "tbim"]),
+        gr.inputs.Number(default=0.005, label="epsilon"),
+        gr.inputs.Number(default=0.002, label="alpha"),
+        gr.inputs.Slider(minimum=1, maximum=100, step=1, default=10, label="iterations"),
+    ], outputs=[
+        gr.outputs.Image(label="Image fed to model"),
+        gr.outputs.Label(num_top_classes=3, label="Predicted label"),
+        gr.outputs.Image(label="Image after attack"),
+        gr.outputs.Label(num_top_classes=3, label="Predicted label after attack"),
+    ],
+        layout="horizontal", title="Play Attack", description="""
+        Demo of different types of adversarial attack
 
-    # play_attack("imask", model, image, label=label, epsilon=0.005)
-    # play_attack("timask", model, image, label=label, target=target, epsilon=0.005)
-    # play_attack("fgsm", model, image, label=label, epsilon=0.005)
-    # play_attack("tfgsm", model, image, target=target, epsilon=0.005)
-    # play_attack("bim", model, image, label=label, epsilon=0.005, alpha=0.005)
-    # play_attack("tbim", model, image, target=target, epsilon=0.01, alpha=0.025)
+        IMask: Attack the model by perturbing the input image
+        Usage: imask <image> <epsilon> <iterations>
+
+        TIMask: Attack the model by perturbing the input image
+        Usage: imask <image> <epsilon> <target> <iterations>
+
+        FGSM: Attack the model by perturbing the input image
+        Usage: fgsm <image> <epsilon>
+
+        TFGSM: Attack the model by perturbing the input image
+        Usage: tfgsm <image> <epsilon> <target>
+
+        BIM: Attack the model by perturbing the input image
+        Usage: bim <image> <epsilon> <alpha> <iterations>
+
+        TBIM: Attack the model by perturbing the input image
+        Usage: tbim <image> <epsilon> <alpha> <target> <iterations>
+        """, theme="huggingface"
+    )
+
+    iface.launch()
