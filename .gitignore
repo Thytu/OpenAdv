@@ -130,3 +130,9 @@ dmypy.json
 
 # Data
 data/
+.img
+
+# Gradio
+/flagged
+gradio_queue.db
+gradio_queue.db-journal
