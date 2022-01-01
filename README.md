@@ -14,10 +14,10 @@
     <img src=".img/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Adversarial-attacks</h3>
+  <h3 align="center">OpenAdv</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    An easy to use simple adversarial attack tool
     <br />
     <a href="https://github.com/Thytu/Adversarial-attacks"><strong>Explore the docs »</strong></a>
     <br />
@@ -63,7 +63,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Demo Simple][product-demo-simple]](https://github.com/Thytu/Adversarial-attacks)
 
 
 
@@ -231,4 +231,4 @@ Project Link: [https://github.com/Thytu/Adversarial-attacks](https://github.com/
 [license-url]: https://github.com/Thytu/Adversarial-attacks/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/valentin-de-matos
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: .img/demo-simple.gif
