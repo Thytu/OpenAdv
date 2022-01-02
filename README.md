@@ -10,7 +10,7 @@
 
 <br />
 <div align="center">
-  <a href="https://github.com/Thytu/Adversarial-attacks">
+  <a href="https://github.com/Thytu/OpenAdv">
     <img src=".img/logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -19,36 +19,25 @@
   <p align="center">
     An easy to use simple adversarial attack tool
     <br />
-    <a href="https://github.com/Thytu/Adversarial-attacks"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/Thytu/OpenAdv"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/Thytu/Adversarial-attacks">View Demo</a>
+    <a href="https://github.com/Thytu/OpenAdv">View Demo</a>
     ·
-    <a href="https://github.com/Thytu/Adversarial-attacks/issues">Report Bug</a>
+    <a href="https://github.com/Thytu/OpenAdv/issues">Report Bug</a>
     ·
-    <a href="https://github.com/Thytu/Adversarial-attacks/issues">Request Feature</a>
+    <a href="https://github.com/Thytu/OpenAdv/issues">Request Feature</a>
   </p>
 </div>
 
-
+<br/>
 
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
+    <li><a href="#about-the-project">About The Project</a></li>
+    <li><a href="#getting-started">Getting Started</a></li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
@@ -58,23 +47,24 @@
   </ol>
 </details>
 
+<br/>
 
 
-<!-- ABOUT THE PROJECT -->
 ## About The Project
-
-[![Product Demo Simple][product-demo-simple]](https://github.com/Thytu/Adversarial-attacks)
-
-
 
 There are many great web interface to try adversarial attacks available on GitHub; however, I didn't find one that really suited my needs so I created this one.
 
-Here's why:
+Key features:
 * Simple examples to get started
 * Multiple type of Adv Attacks available
 * Usage of custom model (vision only) (in progress)
 
 If you miss any type of Adv Attack please consider to fork this repo and to create a pull request or to open an issue.
+
+<br/>
+<div align="center">
+  <img src=".img/demo-simple.gif" alt="Demo OpenAdv Simle">
+</div>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -94,19 +84,12 @@ If you miss any type of Adv Attack please consider to fork this repo and to crea
 
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
 
-Make sure to use python3.9.X, torch is currently not supported for python 3.10 and native tuple type hinting has been introduced in python3.9.
+Make sure to use python3.9.X, torch is currently not supported for python 3.10 and native tuple type hinting has been introduced since python3.9.
 
-Then you only need to install the python dependencies : `python3 -m pip install requirements.txt`
+Then you only need **to install the python dependencies** : `python3 -m pip install requirements.txt`
 
-### Installation
-
-1. Start the server
-   ```sh
-   python src/main
-   ```
-2. Enjoy
+**To start the server** : `python src/main`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -115,7 +98,7 @@ Then you only need to install the python dependencies : `python3 -m pip install 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-To start you simply have to select the attack you want to proced among : IMask, TIMask, FGSM, TFGSM, BIM and TBIM
+To start you simply have to select the attack you want to proceed among : FGSM, TFGSM, BIM and TBIM
 
 Then select or drag & drop the image on which you want to apply the attack and select the parameters for the attack.
 
@@ -124,32 +107,20 @@ TODO: describe every param
 `alpha` :  todo
 `iterations` :  todo
 
-### IMask
-TODO: Description of the attack
-Do not use `alpha` and `target`.
-
-### TIMask
-TODO: Description of the attack
-Do not use `alpha`.
-
-
 ### FGSM
-TODO: Description of the attack
+One-step gradient-based method.
 Do not use `alpha`, `target` and `iterations`.
 
 ### TFGSM
-TODO: Description of the attack
+FGSM algorithm with target label.
 Do not use `alpha` and `iterations`.
 
 ### BIM
-TODO: Description of the attack
+Iterative FGSM algorithm.
 Do not use `target`.
 
 ### TBIM
-TODO: Description of the attack
-
-
-TODO: add a conf threshold to param
+BIM algorithm with target label.
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -160,10 +131,12 @@ TODO: add a conf threshold to param
 - [ ] Support more attacks
     - [ ] Carlini & Wagner
     - [ ] Deepfool
+    - [ ] Limited-memory Broyden-Fletcher-Goldfarb-Shanno
+    - [ ] Jacobian-based Saliency Map
 - [ ] Add Changelog
 - [ ] Custom Model Support
 
-See the [open issues](https://github.com/Thytu/Adversarial-attacks/issues) for a full list of proposed features and known issues.
+See the [open issues](https://github.com/Thytu/OpenAdv/issues) for a full list of proposed features and known issues.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -201,7 +174,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Valentin De Matos - [@ValentinDeMato1](https://twitter.com/ValentinDeMato1) - valentin.de-matos@epitech.eu
 
-Project Link: [https://github.com/Thytu/Adversarial-attacks](https://github.com/Thytu/Adversarial-attacks)
+Project Link: [https://github.com/Thytu/OpenAdv](https://github.com/Thytu/OpenAdv)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -209,7 +182,9 @@ Project Link: [https://github.com/Thytu/Adversarial-attacks](https://github.com/
 
 ## Acknowledgments
 
-* [Adversarial Attacks in Machine Learning and How to Defend Against Them](https://towardsdatascience.com/adversarial-attacks-in-machine-learning-and-how-to-defend-against-them-a2beed95f49c)
+* [Adversarial Attacks in Machine Learning and How to Defend Against Them](https://towardsdatascience.com/OpenAdv-in-machine-learning-and-how-to-defend-against-them-a2beed95f49c)
+* [What Is Adversarial Machine Learning? Attack Methods in 2021](https://viso.ai/deep-learning/adversarial-machine-learning/)
+* [Advances in adversarial attacks and defenses in computer vision: A survey](https://arxiv.org/pdf/2108.00401.pdf)
 * [Pytorch - ADVERSARIAL EXAMPLE GENERATION](https://pytorch.org/tutorials/beginner/fgsm_tutorial.html)
 * [README Template](https://github.com/othneildrew/Best-README-Template)
 
@@ -218,17 +193,17 @@ Project Link: [https://github.com/Thytu/Adversarial-attacks](https://github.com/
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[contributors-shield]: https://img.shields.io/github/contributors/Thytu/Adversarial-attacks.svg?style=for-the-badge
-[contributors-url]: https://github.com/Thytu/Adversarial-attacks/graphs/contributors
-[issues]: https://img.shields.io/github/issues/Thytu/Adversarial-attacks
-[forks-shield]: https://img.shields.io/github/forks/Thytu/Adversarial-attacks.svg?style=for-the-badge
-[forks-url]: https://github.com/Thytu/Adversarial-attacks/network/members
-[stars-shield]: https://img.shields.io/github/stars/Thytu/Adversarial-attacks.svg?style=for-the-badge
-[stars-url]: https://github.com/Thytu/Adversarial-attacks/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Thytu/Adversarial-attacks.svg?style=for-the-badge
-[issues-url]: https://github.com/Thytu/Adversarial-attacks/issues
-[license-shield]: https://img.shields.io/github/license/Thytu/Adversarial-attacks.svg?style=for-the-badge
-[license-url]: https://github.com/Thytu/Adversarial-attacks/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/Thytu/OpenAdv.svg?style=for-the-badge
+[contributors-url]: https://github.com/Thytu/OpenAdv/graphs/contributors
+[issues]: https://img.shields.io/github/issues/Thytu/OpenAdv
+[forks-shield]: https://img.shields.io/github/forks/Thytu/OpenAdv.svg?style=for-the-badge
+[forks-url]: https://github.com/Thytu/OpenAdv/network/members
+[stars-shield]: https://img.shields.io/github/stars/Thytu/OpenAdv.svg?style=for-the-badge
+[stars-url]: https://github.com/Thytu/OpenAdv/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Thytu/OpenAdv.svg?style=for-the-badge
+[issues-url]: https://github.com/Thytu/OpenAdv/issues
+[license-shield]: https://img.shields.io/github/license/Thytu/OpenAdv.svg?style=for-the-badge
+[license-url]: https://github.com/Thytu/OpenAdv/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/valentin-de-matos
 [product-screenshot]: .img/demo-simple.gif
