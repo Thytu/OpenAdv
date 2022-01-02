@@ -183,8 +183,11 @@ Project Link: [https://github.com/Thytu/OpenAdv](https://github.com/Thytu/OpenAd
 ## Acknowledgments
 
 * [Adversarial Attacks in Machine Learning and How to Defend Against Them](https://towardsdatascience.com/OpenAdv-in-machine-learning-and-how-to-defend-against-them-a2beed95f49c)
+<<<<<<< HEAD
 * [What Is Adversarial Machine Learning? Attack Methods in 2021](https://viso.ai/deep-learning/adversarial-machine-learning/)
 * [Advances in adversarial attacks and defenses in computer vision: A survey](https://arxiv.org/pdf/2108.00401.pdf)
+=======
+>>>>>>> 666038e8a335205ee29854e9ac0830f2b636cedf
 * [Pytorch - ADVERSARIAL EXAMPLE GENERATION](https://pytorch.org/tutorials/beginner/fgsm_tutorial.html)
 * [README Template](https://github.com/othneildrew/Best-README-Template)
 
