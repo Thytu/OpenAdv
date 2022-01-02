@@ -55,7 +55,7 @@ def bim_attack(model: torch.nn.Module, image: torch.tensor, label: torch.tensor,
     for _ in range(kwargs.get("num_iter", 10)):
         F.nll_loss(model.forward(atk_image), label).backward()
 
-        conf = F.softmax(model(atk_image))[0][label]
+        conf = F.softmax(model(atk_image), dim=1)[0][label]
 
         if conf.item() < stop_threshold:
             break
