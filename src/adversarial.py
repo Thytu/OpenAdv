@@ -13,9 +13,7 @@ def fgsm_attack(model: torch.nn.Module, image: torch.tensor, label: torch.tensor
 
     model.eval()
     image.grad = None
-
-    if not image.requires_grad:
-        image.requires_grad = True
+    image.requires_grad = True
 
     output = model(image)
     F.nll_loss(output, label).backward()
