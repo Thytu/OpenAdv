@@ -19,14 +19,12 @@
   <p align="center">
     An easy to use simple adversarial attack tool
     <br />
-    <a href="https://github.com/Thytu/OpenAdv"><strong>Explore the docs »</strong></a>
+    <a href="#usage"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/Thytu/OpenAdv">View Demo</a>
-    ·
-    <a href="https://github.com/Thytu/OpenAdv/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/Thytu/OpenAdv/issues">Request Feature</a>
+    <a href="#about-the-project">View Demo</a>
+    · <a href="https://github.com/Thytu/OpenAdv/issues">Report Bug</a>
+    · <a href="https://github.com/Thytu/OpenAdv/issues">Request Feature</a>
   </p>
 </div>
 
@@ -79,7 +77,6 @@ If you miss any type of Adv Attack please consider to fork this repo and to crea
 
 
 
-<!-- GETTING STARTED -->
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
@@ -95,7 +92,6 @@ Then you only need **to install the python dependencies** : `python3 -m pip inst
 
 
 
-<!-- USAGE EXAMPLES -->
 ## Usage
 
 To start you simply have to select the attack you want to proceed among : FGSM, TFGSM, BIM and TBIM
@@ -107,19 +103,39 @@ TODO: describe every param
 `alpha` :  todo
 `iterations` :  todo
 
-### FGSM
-One-step gradient-based method.
-Do not use `alpha`, `target` and `iterations`.
+### FGSM (Fast Gradient Sign Method)
+One-step gradient-based method. Do not use `alpha`, `target` and `iterations`.
 
-### TFGSM
+<br/>
+<img src=".img/fgsm_panda_image.png" style="display: block; margin-left: auto; margin-right: auto; width: 80%;">
+<br/>
+<br/>
+
+<cite>The attack is remarkably powerful, and yet intuitive. It is designed to attack neural networks by leveraging the way they learn, gradients. The idea is simple, rather than working to minimize the loss by adjusting the weights based on the backpropagated gradients, the attack adjusts the input data to maximize the loss based on the same backpropagated gradients. In other words, the attack uses the gradient of the loss w.r.t the input data, then adjusts the input data to maximize the loss.</cite>\
+_source: [https://pytorch.org/tutorials/beginner/fgsm_tutorial.html](https://pytorch.org/tutorials/beginner/fgsm_tutorial.html)_
+
+`perturbation = image + epsilon * sign(grad)`
+
+Original paper: [Explaining and Harnessing Adversarial Examples](https://arxiv.org/abs/1412.6572)
+
+### TFGSM (Targeted Fast Gradient Sign Method)
 FGSM algorithm with target label.
 Do not use `alpha` and `iterations`.
 
-### BIM
-Iterative FGSM algorithm.
-Do not use `target`.
+Prety much the same as FGSM but instead of using the gradient of the loss w.r.t the input data, it uses the gradient of the loss w.r.t the target label.
 
-### TBIM
+`perturbation = image - epsilon * sign(grad)`
+
+### BIM (Basic Iterative Method)
+Iterative FGSM algorithm. Do not use `target`.
+
+<cite>$x^t = (x^{t-1} + \alpha * sign(grad))$\
+Where $\alpha$ is the step size and $x^t$ is the adversarial image at time $t$.\
+The step size is usually set to $\epsilon / T \leq \alpha \leq \epsilon $ where $T$ is the number of iterations.\
+</cite>
+_source: [Understanding Adversarial Attacks on Deep Learning Based Medical Image Analysis Systems](https://arxiv.org/pdf/1907.10456.pdf)_
+
+### TBIM (Targeted Basic Iterative Method)
 BIM algorithm with target label.
 
 
