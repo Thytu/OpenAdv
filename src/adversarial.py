@@ -64,7 +64,7 @@ def bim_attack(model: torch.nn.Module, image: torch.tensor, label: torch.tensor,
     return atk_image
 
 
-def tbim_attack(model: torch.nn.Module, image: torch.tensor, target: torch.tensor, epsilon: float, alpha=0.005, stop_threshold=0.5, exit_when_predicted=True, **kwargs) -> torch.tensor:
+def tbim_attack(model: torch.nn.Module, image: torch.tensor, target: torch.tensor, epsilon: float, alpha=0.005, stop_threshold=0.5, exit_when_predicted=False, **kwargs) -> torch.tensor:
     """
     Basic Iterative Method Attack, with target class
     """
