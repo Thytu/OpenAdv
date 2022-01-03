@@ -1,3 +1,4 @@
+import os
 import json
 import torch
 import adversarial
@@ -42,8 +43,8 @@ if __name__ == '__main__':
     iface = gr.Interface(fn=play_attack, inputs=[
         gr.inputs.Image(label="Image to feed"),
         gr.inputs.Radio(["fgsm", "tfgsm", "bim", "tbim"]),
-        gr.inputs.Number(default=0.005, label="epsilon"),
-        gr.inputs.Number(default=0.002, label="alpha"),
+        gr.inputs.Number(default=0.05, label="epsilon"),
+        gr.inputs.Number(default=0.02, label="alpha"),
         gr.inputs.Slider(minimum=1, maximum=100, step=1, default=10, label="iterations"),
         gr.inputs.Dropdown(list(CLS_IDX.values()), label="Target class")
     ], outputs=[
@@ -57,4 +58,4 @@ if __name__ == '__main__':
         article=open("article.html", "r").read(), theme="huggingface",
     )
 
-    iface.launch(enable_queue=False)
+    iface.launch(enable_queue=False, share=eval(os.getenv("SHARE", "False")))
