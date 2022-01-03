@@ -37,7 +37,6 @@ def play_attack(img, attack_name, epsilon, alpha, num_iter, target=None):
 if __name__ == '__main__':
 
     model = torch.hub.load('pytorch/vision:v0.10.0', 'vgg19', pretrained=True)
-    # model = torch.hub.load('pytorch/vision:v0.10.0', 'mobilenet_v2', pretrained=True)
     best_test_acc = None
 
     iface = gr.Interface(fn=play_attack, inputs=[
@@ -57,8 +56,5 @@ if __name__ == '__main__':
         description="Userfriendly adversarial attack tool to demonstrate the effectiveness of different attacks on a model, here VGG19. For more information, please read the article below.",
         article=open("article.html", "r").read(), theme="huggingface",
     )
-
-    # params = open("params.md", "r").read()
-    # print(params)
 
     iface.launch(enable_queue=False)
