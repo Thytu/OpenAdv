@@ -71,7 +71,7 @@ If you miss any type of Adv Attack please consider to fork this repo and to crea
 ### Built With
 
 * [PyTorch](https://pytorch.org)
-* [Gradio](https://pytorch.org)
+* [Gradio](https://gradio.app)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
