@@ -84,7 +84,7 @@ To get a local copy up and running follow these simple example steps.
 
 Make sure to use python3.9.X, torch is currently not supported for python 3.10 and native tuple type hinting has been introduced since python3.9.
 
-Then you only need **to install the python dependencies** : `python3 -m pip install requirements.txt`
+Then you only need **to install the python dependencies** : `python3 -m pip install -r requirements.txt`
 
 **To start the server** : `python src/main`
 
